@@ -1,32 +1,37 @@
-"""Simple script for Fibonacci calculation."""
+import random
+# def update_game_state(secret_word: str, guessed_letters: list[str], guess: str, lives: int) -> tuple[list[str], int]:
+#     guess = guess.lower()
+#     secret_word = secret_word.lower()
+#     new_guessed_letters = guessed_letters + [guess] if guess not in guessed_letters else guessed_letters
 
-def fib(n: int) -> int:
-    """Return the n-th Fibonacci number using recursion.
+#     is_wrong = guess not in secret_word
+#     is_new = guess not in guessed_letters
+    
+#     new_lives = lives - 1 if is_wrong and is_new else lives
 
-    The sequence is defined as::
+#     return new_guessed_letters, new_lives
 
-        fib(0) == 0
-        fib(1) == 1
-        fib(n) == fib(n-1) + fib(n-2) for n > 1
+def play_game():
+    word = random.choice(["python", "epita", "software", "logic", "code"])
+    guessed = []
+    lives = 6
 
-    This implementation is intentionally naive and exponential in
-    time to demonstrate recursion.
-    """
-    if n < 0:
-        raise ValueError("n must be a non-negative integer")
-    if n < 2:
-        return n
-    return fib(n - 1) + fib(n - 2)
+    while lives > 0:
+        display = [char if char in guessed else "_" for char in word]
+        print(f"\nWord: {' '.join(display)}")
+        print(f"Lives: {lives} | Guessed: {', '.join(guessed)}")
+        
+        if "_" not in display:
+            print("You won!")
+            return
 
+        user_input = input("Guess a letter: ").lower()
+        
+        if len(user_input) == 1 and user_input.isalpha():
+            guessed, lives = update_game_state(word, guessed, user_input, lives)
+        else:
+            print("Invalid input.")
 
-if __name__ == "__main__":
-    # simple command-line interaction
-    import sys
+    print(f"You lost! The word was: {word}")
 
-    try:
-        n = int(sys.argv[1])
-    except (IndexError, ValueError):
-        print("Usage: python main.py <non-negative-integer>")
-        sys.exit(1)
-
-    print(f"fib({n}) = {fib(n)}")
+play_game()
