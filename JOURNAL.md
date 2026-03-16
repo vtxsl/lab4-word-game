@@ -1,4 +1,15 @@
 ### **New Interaction**
+- **Agent Version**: 2.1
+- **Date**: 03-16-2026 14:35
+- **User**: vatsal.rana@epita.fr
+- **Prompt**: read #file:copilot-instructions.md and activate #file:journal-logger.agent.md to activate the journal logger agent
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: Grok Code Fast 1
+- **Socratic Mode**: ON
+- **Changes Made**: Activated journal logger agent
+- **Context and Reasons for Changes**: Following user request to activate the journal logger for logging interactions.
+
+### **New Interaction**
 - **Date**: 03-12-2026 14:55
 - **User**: default_user
 - **Prompt**: The user said they were done with the game function and asked to help write tests for it. Later they provided a list of core features and constraints and asked to check if the game function stays in check with them.

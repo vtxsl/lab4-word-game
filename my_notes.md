@@ -23,9 +23,10 @@ Preventing users from entering numbers or multiple characters at once.
 Ensuring the same correct or incorrect letter isn't penalized twice.
 Handling empty input or whitespace.
 
-# CoPilot Suggestions
+### New Feature implementation NO AI YET
 
-## App States
-## App Variables
-## App Rules and Invariants
-## App Bugs
+Implement a list of letters and pop after the computer guesses it.
+create a function that actually guesses the letters.
+make the whole game a loop somehow to keep asking after.
+potentially make a priority list of letters so vowels first and then consonents with the least common ones being late.
+implementing a difficulty feature to specify the amount of lives for the computer to guess from.
